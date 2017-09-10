@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+message subfield
+{
+	int32 id = 1;
+	bytes content=2;
+}
+
+
+message SearchRequest {
+  string query = 1;
+  int32 page_number = 2;
+  int32 result_per_page = 3;
+  bytes data = 4;
+  repeated subfield contents=5;
+}
