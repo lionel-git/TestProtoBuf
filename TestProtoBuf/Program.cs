@@ -63,7 +63,7 @@ namespace TestProtoBuf
             var m = new SearchRequest();
 
             m.Query = "Select * from toto";
-            m.PageNumber = 10;
+            m.PageNumber = 0;
             m.ResultPerPage = 5;
             m.Data = ByteString.CopyFrom("Hello world xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", Encoding.ASCII);
             m.Contents.Add(new subfield() { Id = 1, Content = ByteString.CopyFrom("zzzzzzzzzzzzzzzzzzzz", Encoding.ASCII) });
@@ -87,7 +87,19 @@ namespace TestProtoBuf
             PrintSmart(m);
             Console.WriteLine("m_ter={0}", m);
 
+            var js = new JsonFormatter.Settings(true);
+            var jf = new JsonFormatter(js);
+            Console.WriteLine("m4={0}", jf.Format(m));
 
+            var t = new Google.Protobuf.WellKnownTypes.Any();
+
+            Console.WriteLine(Properties.Settings.Default.Tester);
+            Properties.Settings.Default.Tester = "lionel";
+            Properties.Settings.Default.Save();
+
+            Console.WriteLine(Properties.Resources.MyString);
+            
+            Console.WriteLine(Properties.Resources.TextFile1);
         }
     }
 }
