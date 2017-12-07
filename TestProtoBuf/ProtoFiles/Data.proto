@@ -1,5 +1,12 @@
 ﻿syntax = "proto3";
 
+enum MyEnum
+{
+	D_TEST = 0;
+	D_MONDAY = 1;
+	D_TUESDAY = 2;
+}
+
 message subfield
 {
 	int32 id = 1;

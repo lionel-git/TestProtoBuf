@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using System.IO;
+using Google.Protobuf.Reflection;
 
 namespace TestProtoBuf
 {
@@ -55,10 +56,25 @@ namespace TestProtoBuf
             Console.WriteLine("After transform: {0}", m2);
         }
 
+        static void TestEnum()
+            {
+                var e = MyEnum.DMonday;
+
+           var type = typeof(MyEnum);
+           var memInfo = type.GetMember(e.ToString());
+            var attributes = memInfo[0].GetCustomAttributes(typeof(OriginalNameAttribute), false);
+            var description = ((OriginalNameAttribute)attributes[0]).Name;
+
+
+              Console.WriteLine(e);  
+
+            }
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello world");
+
+            TestEnum(); return;
 
             var m = new SearchRequest();
 

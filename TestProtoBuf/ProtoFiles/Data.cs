@@ -23,11 +23,12 @@ public static partial class DataReflection {
           "CgpEYXRhLnByb3RvIicKCHN1YmZpZWxkEgoKAmlkGAEgASgFEg8KB2NvbnRl",
           "bnQYAiABKAwidwoNU2VhcmNoUmVxdWVzdBINCgVxdWVyeRgBIAEoCRITCgtw",
           "YWdlX251bWJlchgCIAEoBRIXCg9yZXN1bHRfcGVyX3BhZ2UYAyABKAUSDAoE",
-          "ZGF0YRgEIAEoDBIbCghjb250ZW50cxgFIAMoCzIJLnN1YmZpZWxkYgZwcm90",
-          "bzM="));
+          "ZGF0YRgEIAEoDBIbCghjb250ZW50cxgFIAMoCzIJLnN1YmZpZWxkKjEKBk15",
+          "RW51bRIKCgZEX1RFU1QQABIMCghEX01PTkRBWRABEg0KCURfVFVFU0RBWRAC",
+          "YgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MyEnum), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::subfield), global::subfield.Parser, new[]{ "Id", "Content" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SearchRequest), global::SearchRequest.Parser, new[]{ "Query", "PageNumber", "ResultPerPage", "Data", "Contents" }, null, null, null)
         }));
@@ -35,6 +36,15 @@ public static partial class DataReflection {
   #endregion
 
 }
+#region Enums
+public enum MyEnum {
+  [pbr::OriginalName("D_TEST")] DTest = 0,
+  [pbr::OriginalName("D_MONDAY")] DMonday = 1,
+  [pbr::OriginalName("D_TUESDAY")] DTuesday = 2,
+}
+
+#endregion
+
 #region Messages
 public sealed partial class subfield : pb::IMessage<subfield> {
   private static readonly pb::MessageParser<subfield> _parser = new pb::MessageParser<subfield>(() => new subfield());
