@@ -21,3 +21,16 @@ message SearchRequest {
   bytes data = 4;
   repeated subfield contents=5;
 }
+
+message Content 
+{
+	int32 value =1;
+	string description =2;
+}
+
+
+message MyData
+{
+   string name=1;
+   repeated Content contents =2;
+}

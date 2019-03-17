@@ -74,6 +74,11 @@ namespace TestProtoBuf
         {
             Console.WriteLine("Hello world");
 
+            var tr = new TestReflection();
+            tr.DoCheck();
+            return;
+
+
             TestEnum(); return;
 
             var m = new SearchRequest();
